@@ -144,7 +144,7 @@ class ImageCrop extends Component {
             var distance = (this.zoomCurrentDistance-this.zoomLastDistance)/400
             var zoom = this.state.zoom-distance
 
-            if (zoom<0)zoom=0.0000001
+            if (zoom<1/this.props.maxZoom)zoom=1/this.props.maxZoom
             if (zoom>1)zoom=1
             this.setState({
               zoom: zoom,
